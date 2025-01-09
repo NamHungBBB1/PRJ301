@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(145deg, #f8f5f0, #e9e5df);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        form {
+            width: 700px;
+            background: linear-gradient(145deg, #ffffff, #e6e6e6);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+            border: 1px solid #d4af37; /* Gold border */
+        }
+
+        .logo {
+            display: block;
+            margin: 0 auto 20px;
+            width: 80px;
+            height: 80px;
+            background: url('https://www.example.com/your-logo.png') no-repeat center center;
+            background-size: contain;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 28px;
+            color: #d4af37; /* Gold */
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            text-align: left;
+            font-size: 20px;
+            color: #333;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #d4af37; /* Gold */
+        }
+
+        td {
+            padding: 10px 0;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        input[type="file"],
+        select,
+        textarea {
+            width: 95%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus,
+        input[type="email"]:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #d4af37; /* Gold */
+            box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        .radio-group input[type="radio"] {
+            margin-right: 8px;
+        }
+
+        button {
+            padding: 12px 20px;
+            margin-right: 10px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button[type="submit"] {
+            background-color: #d4af37; /* Gold */
+            color: #fff;
+            font-weight: bold;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #cfae4e;
+            box-shadow: 0 4px 10px rgba(212, 175, 55, 0.4);
+        }
+
+        button[type="reset"] {
+            background-color: #8c8c8c; /* Gray */
+            color: #fff;
+            font-weight: bold;
+        }
+
+        button[type="reset"]:hover {
+            background-color: #666666;
+            box-shadow: 0 4px 10px rgba(140, 140, 140, 0.4);
+        }
+
+        td[colspan="2"] {
+            text-align: center;
+            padding-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <form action="register.php" method="post" enctype="multipart/form-data">
+        <div class="logo"></div>
+        <h2>User Registration</h2>
+        <table>
+            <!-- Login Information -->
+            <tr>
+                <th colspan="2">Login Information</th>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><input type="email" name="email" placeholder="Enter your email" required></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input type="password" name="password" placeholder="Enter your password" required></td>
+            </tr>
+            <tr>
+                <td>Confirm Password:</td>
+                <td><input type="password" name="confirm_password" placeholder="Confirm your password" required></td>
+            </tr>
+
+            <!-- Personal Information -->
+            <tr>
+                <th colspan="2">Personal Information</th>
+            </tr>
+            <tr>
+                <td>Full Name:</td>
+                <td><input type="text" name="fullname" placeholder="Enter your full name" required></td>
+            </tr>
+            <tr>
+                <td>Gender:</td>
+                <td class="radio-group">
+                    <input type="radio" name="gender" value="Male" checked> Male
+                    <input type="radio" name="gender" value="Female"> Female
+                </td>
+            </tr>
+            <tr>
+                <td>Date of Birth:</td>
+                <td><input type="text" name="dob" placeholder="DD/MM/YYYY" required></td>
+            </tr>
+            <tr>
+                <td>Phone Number:</td>
+                <td><input type="text" name="phone" placeholder="Enter your phone number"></td>
+            </tr>
+            <tr>
+                <td>Profile Picture:</td>
+                <td><input type="file" name="avatar"></td>
+            </tr>
+
+            <!-- Address Information -->
+            <tr>
+                <th colspan="2">Address</th>
+            </tr>
+            <tr>
+                <td>Country:</td>
+                <td>
+                    <select name="country">
+                        <option value="Vietnam" selected>Vietnam</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>City:</td>
+                <td>
+                    <select name="city">
+                        <option value="Ho Chi Minh City" selected>Ho Chi Minh City</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>District:</td>
+                <td>
+                    <select name="district">
+                        <option value="Thu Duc" selected>Thu Duc</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Home Address:</td>
+                <td><textarea name="address" rows="4" placeholder="Enter your address"></textarea></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button type="submit">Register</button>
+                    <button type="reset">Clear Form</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
