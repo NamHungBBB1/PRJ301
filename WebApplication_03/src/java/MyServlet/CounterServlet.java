@@ -16,7 +16,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author ADD
  */
-public class BangCuuChuongServlet extends HttpServlet {
+public class CounterServlet extends HttpServlet {
+    private int count=0;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,18 +36,12 @@ public class BangCuuChuongServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Bang cuu chuong</title>");            
+            out.println("<title>Servlet CounterServlet</title>");            
             out.println("</head>");
-            
             out.println("<body>");
-            for(int i=2;i<=9;i++){
-                out.println("<h1>Bang cuu chuong "+i+"</h1>");
-                for(int j=1;j<=10;j++)
-                    out.println(i+"x"+j+"="+ (i*j) +"</br>");
-                
-            }
-            out.println("<h1>Servlet BangCuuChuongServlet at " + request.getContextPath() + "</h1>");
-             out.println("<h1>Servlet BangCuuChuongServlet at " + request.getContextPath() + "</h1>");
+            count++;
+             out.println("<h1>"+count+"</h1>");
+            out.println("<h1>Servlet CounterServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
